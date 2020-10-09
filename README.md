@@ -3,6 +3,25 @@
 
 ### 记录调用接口学习笔记如下
 - [获取实时数据](API_Docs/tushare01.py) 通过股票列表获得实时数据
-
+- [股票分类数据这个文档](API_Docs\tushare02-message.py) 比较鸡肋：新浪股吧 & 股票地域 & 中小板分类 & 沪深300 & 中证500
+- [股票交易数据](API_Docs\tushare03交易数据.py) 日周月k线等数据
 ### 记录策略笔记如下
 - [待定](Strategy_Docs)
+
+
+
+### 作废接口
+```python
+df = ts.get_latest_news()  # 默认获取最近80条新闻数据，只提供新闻类型、链接和标题
+df = ts.get_notices()  # 信息地雷
+df = ts.get_sz50s()  # 上证50接口
+df = ts.get_terminated() # 终止上市的
+df = ts.get_suspended() # 暂停上市的
+
+
+# 需要用pro接口 
+df =  ts.get_industry_classified() # 行业列表
+df =  ts.get_concept_classified() # 概念板块分类
+```
+
+update：20201009
